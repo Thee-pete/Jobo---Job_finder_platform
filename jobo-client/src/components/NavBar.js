@@ -1,8 +1,17 @@
 import React from 'react';
 
-function NavBar(props) {
+import {useNavigate} from 'react-router-dom';
+
+function NavBar() {
+    const navigate = useNavigate();
+    function handleClick(){
+        navigate("/");
+    }
     return (
-        <div>
+        <div className="nav-bar">
+            <h1 className="logo-name" onClick={handleClick}>Jobo</h1>
+            
+     
             
         </div>
     );
