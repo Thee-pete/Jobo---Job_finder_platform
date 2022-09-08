@@ -49,9 +49,50 @@ class ApplicationController < Sinatra::Base
     job_desc: params[:job_desc], 
     how_to_apply: params[:how_to_apply], 
     company_id: params[:company_id], 
-    category_id: params[category_id])
-    category.to_json
+    category_id: params[:category_id])
+    jobs.to_json
   end
 
+  update "/companies/:id" do
+    company = Company.find(params[:id])
+    company.update(
+      company_name: params[:company_name],
+      company_desc: params[:company_desc]
+    )
+    company.to_json
+  end
+  update "/categories/:id" do
+    category = Category.find(params[:id])
+    category.update(
+      category_name: params[:category_name],
+      category_desc: params[:category_desc]
+    )
+    category.to_json
+  end
+  update "/jobs/:id" do 
+    job = Job.find(params[:id])
+    job.update(job_title: params[:job_title ],
+    job_desc: params[:job_desc], 
+    how_to_apply: params[:how_to_apply], 
+    company_id: params[:company_id], 
+    category_id: params[:category_id])
+    job.to_json
+  end
+
+  delete "/companies/:id" do
+    deleted = Company.find(params[:id])
+    deleted.destroy
+    deleted.to_json
+  end
+  delete "/categories/:id" do
+    deleted = Category.find(params[:id])
+    deleted.destroy
+    deleted.to_json
+  end
+  delete "/jobs/:id" do
+    deleted = Job.find(params[:id])
+    deleted.destroy
+    deleted.to_json
+  end
 
 end
