@@ -53,7 +53,7 @@ class ApplicationController < Sinatra::Base
     jobs.to_json
   end
 
-  update "/companies/:id" do
+  patch "/companies/:id" do
     company = Company.find(params[:id])
     company.update(
       company_name: params[:company_name],
@@ -61,7 +61,7 @@ class ApplicationController < Sinatra::Base
     )
     company.to_json
   end
-  update "/categories/:id" do
+  patch "/categories/:id" do
     category = Category.find(params[:id])
     category.update(
       category_name: params[:category_name],
@@ -69,7 +69,7 @@ class ApplicationController < Sinatra::Base
     )
     category.to_json
   end
-  update "/jobs/:id" do 
+  patch "/jobs/:id" do 
     job = Job.find(params[:id])
     job.update(job_title: params[:job_title ],
     job_desc: params[:job_desc], 
