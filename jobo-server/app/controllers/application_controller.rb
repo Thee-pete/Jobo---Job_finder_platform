@@ -94,5 +94,4 @@ class ApplicationController < Sinatra::Base
     deleted.destroy
     deleted.to_json
   end
-
 end
