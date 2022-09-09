@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Job(props) {
+function Job({job}) {
     return (
-        <div>
-            
+        <div className='job-item'>
+            <p>{job.job_title}</p>
         </div>
     );
 }

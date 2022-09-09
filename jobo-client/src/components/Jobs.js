@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import AdminSideBar from './AdminSideBar';
 import { useNavigate } from 'react-router';
 
-function Jobs(props) {
+import Job from './Job';
+
+function Jobs({jobs, getJobs}){
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/jobs`)
+         .then((response) => response.json())
+         .then((actualData) => {
+            console.log(actualData)
+            getJobs(actualData)})
+         .catch((err) => {
+          console.log(err.message);
+         });
+       }, [getJobs]);
+
+    const renderJobs = jobs.map((job)=>{
+        return <Job key={job.id} job={job} jobId = {job.id}/>
+    })
+
     const navigate = useNavigate();
     function handleAddJob(){
         navigate("/addjob")
@@ -12,7 +30,9 @@ function Jobs(props) {
           
             <AdminSideBar/>
             <div>
-            <p>show list of all jobs using jobs component which can be updated/deleted</p>
+           <div>
+            {renderJobs}
+           </div>
             <button onClick={handleAddJob}>Add new job</button>
             </div>
         
