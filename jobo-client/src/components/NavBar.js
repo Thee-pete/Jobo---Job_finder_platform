@@ -11,8 +11,6 @@ function NavBar() {
         <div className="nav-bar">
             <h1 className="logo-name" onClick={handleClick}>Jobo</h1>
             
-     
-            
         </div>
     );
 }
