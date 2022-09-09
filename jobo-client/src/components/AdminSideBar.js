@@ -3,14 +3,12 @@ import {useNavigate} from 'react-router-dom';
 
 function AdminSideBar(props) {
     const navigate = useNavigate();
-    function handleAddJob(){
-        navigate("/addjob")
+ 
+    function handleCategories(){
+        navigate("/categories")
     }
-    function handleAddCategory(){
-        navigate("/addcategory")
-    }
-    function handleAddCompany(){
-        navigate("/addcompany")
+    function handleCompanies(){
+        navigate("/companies")
     }
     function handleJobs(){
         navigate("/jobs")
@@ -19,10 +17,10 @@ function AdminSideBar(props) {
         <div>
             <p>Hello sidebar</p>
             <div className= 'admin-btn-group'>
-                <button onClick={handleJobs}>All Jobs</button>
-                <button onClick={handleAddCompany}>Add Company</button>
-                <button onClick={handleAddCategory}>Add Category</button>
-                <button onClick={handleAddJob}>Add Job</button>
+                <button onClick={handleJobs}>Jobs</button>
+                <button onClick={handleCompanies}>Companies</button>
+                <button onClick={handleCategories}>Categories</button>
+                
                
 
             </div>

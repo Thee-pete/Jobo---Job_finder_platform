@@ -8,6 +8,8 @@ import Jobs from "./Jobs";
 import AddCategory from './AddCategory';
 import AddCompany from './AddCompany';
 import AddJob from './AddJob';
+import Companies from './Companies';
+import Categories from './Categories';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
             <Route path="/addcompany" element={<AddCompany/>}></Route>
             <Route path="/addcategory" element={<AddCategory/>}></Route>
             <Route path="/addjob" element={<AddJob/>}></Route>
+            <Route path="/companies" element={<Companies/>}></Route>
+            <Route path="/categories" element={<Categories/>}></Route>
         </Routes>
 
         <Footer/>

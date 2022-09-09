@@ -129,3 +129,11 @@ code {
   width: 100%;
   display: flex;
 }
+.companies-container{
+  width: 100%;
+  display: flex;
+}
+.categories-container{
+  width: 100%;
+  display: flex;
+}
