@@ -2,24 +2,50 @@ import React,{useEffect, useState} from 'react';
 import AdminSideBar from './AdminSideBar';
 import { useNavigate } from 'react-router-dom';
 
-function AddJob({onAddJob}) {
+function AddJob({onAddJob,companies,getCompanies,categories,getCategories}) {
     const [job_title, setJobTitle] = useState("")
     const [job_desc, setJobDesc] = useState("")
     const [how_to_apply, setHowToApply] = useState("")
     const [company_id, setCompanyId] = useState(0)
     const [category_id, setCategoryId] = useState(0)
 
+  
+ 
+    useEffect(() => {
+        fetch(`http://localhost:9292/companies`)
+         .then((response) => response.json())
+         .then((actualData) => {
+            console.log(actualData)
+            getCompanies(actualData)})
+         .catch((err) => {
+          console.log(err.message);
+         });
+       }, [getCompanies]);
+
+       useEffect(() => {
+        fetch(`http://localhost:9292/categories`)
+         .then((response) => response.json())
+         .then((actualData) => {
+            console.log(actualData)
+            getCategories(actualData)})
+         .catch((err) => {
+          console.log(err.message);
+         });
+       }, [getCategories]);
 
     const navigate =useNavigate();
     function handleSubmit(event){
         event.preventDefault();
-        //navigate to created shop or to the whole list of shops?
-        fetch("http://localhost:9292/categories", {
+        
+        fetch("http://localhost:9292/jobs", {
              method: "POST",
               body: JSON.stringify({
                job_title:job_title,
                job_desc:job_desc,
-               how_to_apply: how_to_apply
+               how_to_apply: how_to_apply,
+               company_id:company_id,
+               category_id:category_id
+
                 
     }),
     headers: {
@@ -40,16 +66,17 @@ function AddJob({onAddJob}) {
             <h1 className='create-header'>Create new job</h1>  
             <form onSubmit={handleSubmit}>
                 <div>
-            <select value={company_id} onChange = {(e)=> setCompanyId(e.target.id)}>
+            <select value={company_id} onChange = {(e)=> setCompanyId(e.target.value)}>
                 {companies.map((company) => {
-                     <option value={company.id}>{company.company_name}</option>
+                   
+                     return <option value={company.id}>{company.company_name}</option>
 
                 })}
 
             </select>
-            <select value={category_id} onChange = {(e)=> setCategoryId(e.target.id)}>
+            <select value={category_id} onChange = {(e)=> setCategoryId(e.target.value)}>
                 {categories.map((category) => {
-                <option value={category.id}>{category.category_name}</option>
+                return <option value={category.id}>{category.category_name}</option>
                 })}
 
             </select>

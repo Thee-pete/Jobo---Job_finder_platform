@@ -3,7 +3,7 @@ import AdminSideBar from './AdminSideBar';
 import { useNavigate } from 'react-router';
 import Category from './Category';
 
-function Categories({categories, getCategories}) {
+function Categories({categories, getCategories, handleDeleteCategory}) {
 
     useEffect(() => {
         fetch(`http://localhost:9292/categories`)
@@ -17,7 +17,7 @@ function Categories({categories, getCategories}) {
        }, [getCategories]);
 
     const renderCategories = categories.map((category)=>{
-        return <Category key={category.id} category={category} categoryId = {category.id}/>
+        return <Category key={category.id} category={category} categoryId = {category.id} handleDeleteCategory={handleDeleteCategory}/>
     })
 
     const navigate =useNavigate();

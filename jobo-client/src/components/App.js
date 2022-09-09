@@ -11,6 +11,7 @@ import AddJob from './AddJob';
 import Companies from './Companies';
 import Categories from './Categories';
 import { useCallback, useState } from "react";
+import EditCompany from "./EditCompany";
 
 function App() {
   const [jobs,setJobs] = useState([]);
@@ -36,6 +37,34 @@ function App() {
   function onAddJob(newJob){
     setJobs([...jobs, newJob])
   }
+  function onUpdateCompany(updatedCompany){
+    const newCompanies = companies.map(company => {
+      if(company.id === updatedCompany.id){
+        return updatedCompany
+      }
+      setCompanies([...companies, newCompanies])
+    })
+
+
+  }
+  function handleDeleteCompany(deletedCompany){
+    const newCompanies = companies.filter(company => company.id !== deletedCompany.id);
+    setCompanies(newCompanies)
+
+    
+  }
+  function handleDeleteCategory(deletedCategory){
+    const newCategories = categories.filter(category => category.id !== deletedCategory.id);
+    setCategories(newCategories)
+
+    
+  }
+  function handleDeleteJob(deletedJob){
+    const newJobs = jobs.filter(job => job.id !== deletedJob.id);
+    setJobs(newJobs)
+
+    
+  }
 
 
 
@@ -49,12 +78,14 @@ function App() {
             <Route path="/" element= {<Home/>}></Route>
             <Route path="/admin" element= {<Admin/>}></Route>
             <Route path="/user" element= {<UserComponent/>}></Route>
-            <Route path="/jobs" element= {<Jobs jobs={jobs} getJobs={getJobs}/>}></Route>
+            <Route path="/jobs" element= {<Jobs jobs={jobs} getJobs={getJobs} handleDeleteJob={handleDeleteJob}/>}></Route>
             <Route path="/addcompany" element={<AddCompany onAddCompany={onAddCompany}/>}></Route>
             <Route path="/addcategory" element={<AddCategory onAddCategory={onAddCategory}/>}></Route>
-            <Route path="/addjob" element={<AddJob onAddJob={onAddJob} companies={companies} categories={categories}/>}></Route>
-            <Route path="/companies" element={<Companies companies={companies} getCompanies={getCompanies}/>} ></Route>
-            <Route path="/categories" element={<Categories categories={categories} getCategories={getCategories}/>} ></Route>
+            <Route path="/addjob" element={<AddJob onAddJob={onAddJob}companies={companies} getCompanies={getCompanies}categories={categories} getCategories={getCategories}/>}></Route>
+            <Route path="/companies" element={<Companies companies={companies} getCompanies={getCompanies} handleDeleteCompany={handleDeleteCompany}/>} ></Route>
+            <Route path="/categories" element={<Categories categories={categories} getCategories={getCategories} handleDeleteCategory={handleDeleteCategory}/>} ></Route>
+            <Route path="/editcompany" element={<EditCompany onUpdateCompany={onUpdateCompany}/>}></Route>
+
         </Routes>
 
         <Footer/>

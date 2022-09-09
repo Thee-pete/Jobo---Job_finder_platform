@@ -9,7 +9,7 @@ function AddCompany({onAddCompany}) {
     const navigate = useNavigate();
     function handleSubmit(event){
         event.preventDefault();
-        //navigate to created shop or to the whole list of shops?
+      
         fetch("http://localhost:9292/companies", {
              method: "POST",
               body: JSON.stringify({

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 import Job from './Job';
 
-function Jobs({jobs, getJobs}){
+function Jobs({jobs, getJobs, handleDeleteJob}){
 
     useEffect(() => {
         fetch(`http://localhost:9292/jobs`)
@@ -18,7 +18,7 @@ function Jobs({jobs, getJobs}){
        }, [getJobs]);
 
     const renderJobs = jobs.map((job)=>{
-        return <Job key={job.id} job={job} jobId = {job.id}/>
+        return <Job key={job.id} job={job} jobId = {job.id} handleDeleteJob={handleDeleteJob}/>
     })
 
     const navigate = useNavigate();

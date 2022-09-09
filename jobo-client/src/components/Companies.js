@@ -3,7 +3,7 @@ import AdminSideBar from './AdminSideBar';
 import { useNavigate } from 'react-router';
 import Company from './Company';
 
-function Companies({companies, getCompanies}) {
+function Companies({companies, getCompanies,handleDeleteCompany}) {
     const navigate = useNavigate();
     function handleAddCompany(){
         navigate("/addcompany")
@@ -21,7 +21,7 @@ function Companies({companies, getCompanies}) {
        }, [getCompanies]);
 
     const renderCompanies = companies.map((company)=>{
-        return <Company key={company.id} company={company} companyId = {company.id}/>
+        return <Company key={company.id} company={company} companyId = {company.id} handleDeleteCompany={handleDeleteCompany}/>
     })
 
 
