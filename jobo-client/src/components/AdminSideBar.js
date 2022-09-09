@@ -1,15 +1,29 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function AdminSideBar(props) {
+    const navigate = useNavigate();
+    function handleAddJob(){
+        navigate("/addjob")
+    }
+    function handleAddCategory(){
+        navigate("/addcategory")
+    }
+    function handleAddCompany(){
+        navigate("/addcompany")
+    }
+    function handleJobs(){
+        navigate("/jobs")
+    }
     return (
         <div>
             <p>Hello sidebar</p>
             <div className= 'admin-btn-group'>
-                <button>Add Company</button>
-                <button>Add Category</button>
-                <button>Add Job</button>
-                <NavLink className="jobs-link" to="/jobs">Jobs</NavLink>
+                <button onClick={handleJobs}>All Jobs</button>
+                <button onClick={handleAddCompany}>Add Company</button>
+                <button onClick={handleAddCategory}>Add Category</button>
+                <button onClick={handleAddJob}>Add Job</button>
+               
 
             </div>
         </div>

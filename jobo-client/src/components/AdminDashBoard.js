@@ -1,7 +1,4 @@
 import React from 'react';
-import Jobs from './Jobs';
-import AddCompany from './AddCompany'
-import { Route, Routes } from "react-router-dom";
 
 function AdminDashBoard(props) {
     return (
@@ -9,10 +6,7 @@ function AdminDashBoard(props) {
            <p>hello dashboard</p>
           
            
-           <Routes>
-             <Route path="/jobs" element= {<Jobs/>}></Route>
-             <Route path="/addcompany" element= {<AddCompany/>}></Route>
-            </Routes>
+      
         </div>
     );
 }
