@@ -3,7 +3,7 @@ import AdminSideBar from './AdminSideBar';
 
 function AddCategory(props) {
     return (
-        <div className='category-container'>
+        <div className='add-category-container'>
             <AdminSideBar/>
         </div>
     );

@@ -137,3 +137,15 @@ code {
   width: 100%;
   display: flex;
 }
+.add-company-container{
+  width: 100%;
+  display: flex;
+}
+.add-job-container{
+  width: 100%;
+  display: flex;
+}
+.add-category-container{
+  width: 100%;
+  display: flex;
+}
