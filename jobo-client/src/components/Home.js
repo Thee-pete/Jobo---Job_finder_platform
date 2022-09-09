@@ -15,7 +15,7 @@ function Home(props) {
         <div className="home-container">
             <div class="btn-group">
             <button className='admin-button' onClick={handleAdminClick}>Use as Admin</button>
-            <button className='user-button' onClick={handleUserClick}>Use as User (Job finder)</button>
+            <button className='user-button' onClick={handleUserClick}>Use as Job seeker</button>
            </div>
         </div>
     );
