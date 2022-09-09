@@ -52,7 +52,7 @@ function App() {
             <Route path="/jobs" element= {<Jobs jobs={jobs} getJobs={getJobs}/>}></Route>
             <Route path="/addcompany" element={<AddCompany onAddCompany={onAddCompany}/>}></Route>
             <Route path="/addcategory" element={<AddCategory onAddCategory={onAddCategory}/>}></Route>
-            <Route path="/addjob" element={<AddJob onAddJob={onAddJob}/>}></Route>
+            <Route path="/addjob" element={<AddJob onAddJob={onAddJob} companies={companies} categories={categories}/>}></Route>
             <Route path="/companies" element={<Companies companies={companies} getCompanies={getCompanies}/>} ></Route>
             <Route path="/categories" element={<Categories categories={categories} getCategories={getCategories}/>} ></Route>
         </Routes>
