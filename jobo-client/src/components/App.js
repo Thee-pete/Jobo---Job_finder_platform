@@ -113,7 +113,6 @@ function App() {
             <Route path="/userjobs" element= {<UserJobs jobs={jobs} getJobs={getJobs} />}></Route>
         </Routes>
 
-        <Footer/>
     
     </div>
   );

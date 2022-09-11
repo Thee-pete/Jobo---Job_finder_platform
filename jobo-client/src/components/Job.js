@@ -15,8 +15,8 @@ function Job({job, handleDeleteJob}) {
   
     const setData = (job) => {
         console.log(job);
-        let {job_title,job_desc, how_to_apply,company_id,category_id} = job
-       // localStorage.setItem('ID',id)
+        let {id,job_title,job_desc, how_to_apply,company_id,category_id} = job
+        localStorage.setItem('ID',id)
         localStorage.setItem('JOB_TITLE', job_title)
         localStorage.setItem('JOB_DESC',job_desc)
         localStorage.setItem('HOW_TO_APPLY',how_to_apply)
