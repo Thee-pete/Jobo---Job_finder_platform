@@ -14,7 +14,7 @@ You will need a web browser:
 
 ### Live Link
 
-The live link to this front-end is https://jobo-job-finder-platform-mu.vercel.app/
+The live link to the front-end is https://jobo-job-finder-platform-mu.vercel.app/
 
 The live link to the back-end (API) is https://jobo-server2.herokuapp.com/
 
