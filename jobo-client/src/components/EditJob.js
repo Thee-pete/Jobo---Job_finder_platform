@@ -12,7 +12,7 @@ function EditJob({onUpdateJob,companies,getCompanies,categories,getCategories}) 
     const navigate = useNavigate()
 
     useEffect(() => {
-        setID(localStorage.getItem('ID'))
+       // setID(localStorage.getItem('ID'))
         setJobTitle(localStorage.getItem('JOB_TITLE'));
         setJobDesc(localStorage.getItem('JOB_DESC'))
         setHowToApply(localStorage.getItem('HOW_TO_APPLY'));
