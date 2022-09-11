@@ -21,7 +21,7 @@ function EditJob({onUpdateJob,companies,getCompanies,categories,getCategories}) 
         
     }, []);
     useEffect(() => {
-        fetch(`http://localhost:9292/companies`)
+        fetch(`https://jobo-server2.herokuapp.com/companies`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)
@@ -32,7 +32,7 @@ function EditJob({onUpdateJob,companies,getCompanies,categories,getCategories}) 
        }, [getCompanies]);
 
        useEffect(() => {
-        fetch(`http://localhost:9292/categories`)
+        fetch(`https://jobo-server2.herokuapp.com/categories`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)
@@ -42,7 +42,7 @@ function EditJob({onUpdateJob,companies,getCompanies,categories,getCategories}) 
          });
        }, [getCategories]);
     function handleUpdate(){
-          fetch(`http://localhost:9292/jobs/${id}`, {
+          fetch(`https://jobo-server2.herokuapp.com/jobs/${id}`, {
           method: 'PATCH',
           headers:{
             'Content-Type': 'application/json'

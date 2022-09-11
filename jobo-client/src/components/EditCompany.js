@@ -16,7 +16,7 @@ function EditCompany({onUpdateCompany}) {
         
     }, []);
     function handleUpdate(){
-          fetch(`http://localhost:9292/companies/${id}`, {
+          fetch(`https://jobo-server2.herokuapp.com/companies/${id}`, {
           method: 'PATCH',
           headers:{
             'Content-Type': 'application/json'

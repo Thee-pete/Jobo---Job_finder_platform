@@ -10,7 +10,7 @@ function AddCategory(onAddCategory) {
     function handleSubmit(event){
         event.preventDefault();
         //navigate to created shop or to the whole list of shops?
-        fetch("http://localhost:9292/categories", {
+        fetch("https://jobo-server2.herokuapp.com/categories", {
              method: "POST",
               body: JSON.stringify({
                category_name:category_name,

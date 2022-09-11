@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 function Category({category, handleDeleteCategory}) {
     function handleDelete(){
-        axios.delete(`http://localhost:9292/categories/${category.id}`)
+        axios.delete(`https://jobo-server2.herokuapp.com/categories/${category.id}`)
         .then(()=>{
            
             handleDeleteCategory(category)

@@ -6,7 +6,7 @@ import Category from './Category';
 function Categories({categories, getCategories, handleDeleteCategory}) {
 
     useEffect(() => {
-        fetch(`http://localhost:9292/categories`)
+        fetch(`https://jobo-server2.herokuapp.com/categories`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)

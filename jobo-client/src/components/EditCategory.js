@@ -15,7 +15,7 @@ function EditCategory({onUpdateCategory}) {
         
     }, []);
     function handleUpdate(){
-          fetch(`http://localhost:9292/categories/${id}`, {
+          fetch(`https://jobo-server2.herokuapp.com/categories/${id}`, {
           method: 'PATCH',
           headers:{
             'Content-Type': 'application/json'

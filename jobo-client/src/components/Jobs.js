@@ -7,7 +7,7 @@ import Job from './Job';
 function Jobs({jobs, getJobs, handleDeleteJob}){
 
     useEffect(() => {
-        fetch(`http://localhost:9292/jobs`)
+        fetch(`https://jobo-server2.herokuapp.com/jobs`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)

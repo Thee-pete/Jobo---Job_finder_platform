@@ -10,7 +10,7 @@ function AddCompany({onAddCompany}) {
     function handleSubmit(event){
         event.preventDefault();
       
-        fetch("http://localhost:9292/companies", {
+        fetch("https://jobo-server2.herokuapp.com/companies", {
              method: "POST",
               body: JSON.stringify({
                company_name:company_name,

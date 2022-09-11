@@ -12,7 +12,7 @@ function AddJob({onAddJob,companies,getCompanies,categories,getCategories}) {
   
  
     useEffect(() => {
-        fetch(`http://localhost:9292/companies`)
+        fetch(`https://jobo-server2.herokuapp.com/companies`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)
@@ -23,7 +23,7 @@ function AddJob({onAddJob,companies,getCompanies,categories,getCategories}) {
        }, [getCompanies]);
 
        useEffect(() => {
-        fetch(`http://localhost:9292/categories`)
+        fetch(`https://jobo-server2.herokuapp.com/categories`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)
@@ -37,7 +37,7 @@ function AddJob({onAddJob,companies,getCompanies,categories,getCategories}) {
     function handleSubmit(event){
         event.preventDefault();
         
-        fetch("http://localhost:9292/jobs", {
+        fetch("https://jobo-server2.herokuapp.com/jobs", {
              method: "POST",
               body: JSON.stringify({
                job_title:job_title,

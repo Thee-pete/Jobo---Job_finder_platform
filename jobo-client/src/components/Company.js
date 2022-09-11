@@ -21,7 +21,7 @@ function Company({company, handleDeleteCompany}) {
 
 
     function handleDelete(){
-        axios.delete(`http://localhost:9292/companies/${company.id}`)
+        axios.delete(`https://jobo-server2.herokuapp.com/companies/${company.id}`)
         .then(()=>{
             handleDeleteCompany(company)
         })

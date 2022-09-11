@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 function Job({job, handleDeleteJob}) {
     function handleDelete(){
-        axios.delete(`http://localhost:9292/jobs/${job.id}`)
+        axios.delete(`https://jobo-server2.herokuapp.com/jobs/${job.id}`)
         .then(()=>{
             
             handleDeleteJob(job)

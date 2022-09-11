@@ -10,7 +10,7 @@ function Companies({companies, getCompanies,handleDeleteCompany}) {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:9292/companies`)
+        fetch(`https://jobo-server2.herokuapp.com/companies`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)
