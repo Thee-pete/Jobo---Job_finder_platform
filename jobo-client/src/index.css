@@ -97,7 +97,7 @@ code {
 .footer{
   position:fixed;
   left:0px;
-  bottom:0px;
+  bottom:0;
   height:30px;
   width:100%;
 }
@@ -274,5 +274,17 @@ code {
 
 }
 .form-container label{
-  min-width:50%
+  display:block;
+}
+.user-job-item{
+  background-color: rgb(216, 216, 216);
+  opacity: 90%;
+  width: 80%;
+  position: relative;
+  box-shadow: 1px ,5px;
+  border-radius: 10px;
+  font-family: 'Helvetica';
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 100px;
 }

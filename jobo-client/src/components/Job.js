@@ -9,8 +9,6 @@ function Job({job, handleDeleteJob}) {
             
             handleDeleteJob(job)
         })
-
-
     }
     const navigate = useNavigate()
     

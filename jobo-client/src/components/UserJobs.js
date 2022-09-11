@@ -17,6 +17,7 @@ function UserJobs({jobs, getJobs}) {
     })
     return (
         <div>
+        <h2>Available jobs</h2>
         {renderJobs}
        </div>
     );

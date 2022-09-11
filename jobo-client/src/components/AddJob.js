@@ -6,8 +6,8 @@ function AddJob({onAddJob,companies,getCompanies,categories,getCategories}) {
     const [job_title, setJobTitle] = useState("")
     const [job_desc, setJobDesc] = useState("")
     const [how_to_apply, setHowToApply] = useState("")
-    const [company_id, setCompanyId] = useState(0)
-    const [category_id, setCategoryId] = useState(0)
+    const [company_id, setCompanyId] = useState("")
+    const [category_id, setCategoryId] = useState("")
 
   
  
