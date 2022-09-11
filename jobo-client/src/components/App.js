@@ -14,6 +14,7 @@ import { useCallback, useState } from "react";
 import EditCompany from "./EditCompany";
 import EditCategory from "./EditCategory";
 import EditJob from "./EditJob";
+import UserJobs from "./UserJobs";
 
 function App() {
   const [jobs,setJobs] = useState([]);
@@ -89,7 +90,7 @@ function App() {
             <Route path="/editcompany" element={<EditCompany onUpdateCompany={onUpdateCompany}/>}></Route>
             <Route path="/editcategory" element={<EditCategory onUpdateCompany={onUpdateCompany}/>}></Route>
             <Route path="/editjob" element={<EditJob onUpdateCompany={onUpdateCompany}companies={companies} getCompanies={getCompanies}categories={categories} getCategories={getCategories}/>}></Route>
-
+            <Route path="/userjobs" element= {<UserJobs jobs={jobs} getJobs={getJobs} />}></Route>
         </Routes>
 
         <Footer/>

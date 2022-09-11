@@ -8,7 +8,7 @@ function Home(props) {
 
     }
     function handleUserClick(){
-        navigate("/user")
+        navigate("/userjobs")
 
     }
     return (
