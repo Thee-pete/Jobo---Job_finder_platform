@@ -31,7 +31,7 @@ function AddCategory(onAddCategory) {
     return (
         <div className='add-category-container'>
             <AdminSideBar/>
-            <div>
+            <div className='form-container'>
             <h1 className='create-header'>Create new category</h1>  
             <form onSubmit={handleSubmit}>
               <label>

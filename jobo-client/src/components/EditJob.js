@@ -64,7 +64,7 @@ function EditJob({onUpdateJob,companies,getCompanies,categories,getCategories}) 
     return (
         <div className='edit-container'>
              <AdminSideBar/>
-            <div>
+            <div className='form-container'>
             <h1 className='create-header'>Update job</h1>  
             <form onSubmit={handleUpdate}>
                 <div>

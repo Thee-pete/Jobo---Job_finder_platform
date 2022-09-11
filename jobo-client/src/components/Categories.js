@@ -32,7 +32,7 @@ function Categories({categories, getCategories, handleDeleteCategory}) {
             <div>
                 {renderCategories}
             </div>
-            <button onClick={handleAddCategory}>Add new category</button>
+            <button className='add-new-btn' onClick={handleAddCategory}>Add new category</button>
             </div>
             
         </div>

@@ -26,10 +26,19 @@ function Category({category, handleDeleteCategory}) {
         
      }
     return (
-        <div>
+        <div className='category-item'>
+            <div className='label-name'>
+            <p className='label-txt'>Category name</p>
               <p>{category.category_name}</p>
+              </div>
+              <div className='label-name'>
+            <p className='label-txt'>Category description</p>
+              <p>{category.category_desc}</p>
+              </div>
+              <div className='button-cont'>
               <button onClick={handleDelete}>Delete</button>
               <button onClick={() => setData(category)}>Update</button>
+              </div>
         </div>
     );
 }

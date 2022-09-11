@@ -28,11 +28,20 @@ function Company({company, handleDeleteCompany}) {
     }
 
     return (
-        <div>
+        <div className='company-item'>
+            <div className='label-name'>
+            <p className='label-txt'>Company name:</p>
             <p>{company.company_name}</p>
+            </div>
+            
+            <div className='label-name'>
+            <p className='label-txt'>Company description:</p>
             <p>{company.company_desc}</p>
+            </div>
+            <div className='button-cont'>
             <button onClick={handleDelete}>Delete</button>
             <button onClick={() => setData(company)}>Update</button>
+            </div>
         </div>
     );
 }

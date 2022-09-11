@@ -62,7 +62,7 @@ function AddJob({onAddJob,companies,getCompanies,categories,getCategories}) {
     return (
         <div className='add-job-container'>
             <AdminSideBar/>
-            <div>
+            <div className='form-container'>
             <h1 className='create-header'>Create new job</h1>  
             <form onSubmit={handleSubmit}>
                 <div>

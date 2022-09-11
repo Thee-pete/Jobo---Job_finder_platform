@@ -31,7 +31,7 @@ function AddCompany({onAddCompany}) {
     return (
         <div className='add-company-container'>
             <AdminSideBar/>
-            <div>
+            <div className='form-container'>
             <h1 className='create-header'>Create new company</h1>  
             <form onSubmit={handleSubmit}>
               <label>

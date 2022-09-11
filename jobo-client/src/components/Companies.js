@@ -34,7 +34,7 @@ function Companies({companies, getCompanies,handleDeleteCompany}) {
             <div>
             {renderCompanies}    
             </div>
-            <button onClick={handleAddCompany}>Add new company</button>
+            <button className='add-new-btn' onClick={handleAddCompany}>Add new company</button>
             </div>
         </div>
     );

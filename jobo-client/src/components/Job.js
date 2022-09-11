@@ -30,9 +30,32 @@ function Job({job, handleDeleteJob}) {
      }
     return (
         <div className='job-item'>
+            <div className='job-details'>
+            <div className='label-name'>
+            <p className='label-txt'>Job title: </p>
             <p>{job.job_title}</p>
+            </div>
+            <div className='label-name'>
+            <p className='label-txt'>Job description:</p>
+            <p>{job.job_desc}</p>
+            </div>
+            <div className='label-name'>
+            <p className='label-txt'>How to apply:</p>
+            <p>{job.how_to_apply}</p>
+            </div>
+            <div className='label-name'>
+            <p className='label-txt'>Company:</p>
+            <p>{job.company_id}</p>
+            </div>
+            <div className='label-name'>
+            <p className='label-txt'>Category:</p>
+            <p>{job.category_id}</p>
+            </div>
+            </div>
+            <div className='button-cont'>
             <button onClick={handleDelete}>Delete</button>
             <button onClick={() => setData(job)}>Update</button>
+            </div>
         </div>
     );
 }

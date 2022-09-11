@@ -33,7 +33,7 @@ function Jobs({jobs, getJobs, handleDeleteJob}){
            <div>
             {renderJobs}
            </div>
-            <button onClick={handleAddJob}>Add new job</button>
+            <button className='add-new-btn' onClick={handleAddJob}>Add new job</button>
             </div>
         
             

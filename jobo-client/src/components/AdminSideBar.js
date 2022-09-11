@@ -15,7 +15,7 @@ function AdminSideBar(props) {
     }
     return (
         <div>
-            <p>Hello sidebar</p>
+       
             <div className= 'admin-btn-group'>
                 <button onClick={handleJobs}>Jobs</button>
                 <button onClick={handleCompanies}>Companies</button>

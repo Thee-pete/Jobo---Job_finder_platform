@@ -36,7 +36,7 @@ function EditCompany({onUpdateCompany}) {
     return (
         <div className='edit-container'>
              <AdminSideBar/>
-            <div>
+            <div className='form-container'>
             <h1 className='create-header'>Update company</h1>  
             <form onSubmit={handleUpdate} >
               <label>
