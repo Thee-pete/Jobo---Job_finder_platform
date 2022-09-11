@@ -45,10 +45,30 @@ function App() {
       if(company.id === updatedCompany.id){
         return updatedCompany
       }
-      setCompanies([...companies, newCompanies])
+     return setCompanies([...companies, newCompanies])
     })
 
+    
+  }
+  function onUpdateCategory(updatedCategory){
+    const newCategories = categories.map(category => {
+      if(category.id === updatedCategory.id){
+        return updatedCategory
+      }
+     return setCategories([...categories, newCategories])
+    })
 
+    
+  }
+  function onUpdateJob(updatedJob){
+    const newJobs = jobs.map(job => {
+      if(job.id === updatedJob.id){
+        return updatedJob
+      }
+     return setJobs([...jobs, newJobs])
+    })
+
+    
   }
   function handleDeleteCompany(deletedCompany){
     const newCompanies = companies.filter(company => company.id !== deletedCompany.id);
@@ -88,8 +108,8 @@ function App() {
             <Route path="/companies" element={<Companies companies={companies} getCompanies={getCompanies} handleDeleteCompany={handleDeleteCompany}/>} ></Route>
             <Route path="/categories" element={<Categories categories={categories} getCategories={getCategories} handleDeleteCategory={handleDeleteCategory}/>} ></Route>
             <Route path="/editcompany" element={<EditCompany onUpdateCompany={onUpdateCompany}/>}></Route>
-            <Route path="/editcategory" element={<EditCategory onUpdateCompany={onUpdateCompany}/>}></Route>
-            <Route path="/editjob" element={<EditJob onUpdateCompany={onUpdateCompany}companies={companies} getCompanies={getCompanies}categories={categories} getCategories={getCategories}/>}></Route>
+            <Route path="/editcategory" element={<EditCategory onUpdateCategory={onUpdateCategory}/>}></Route>
+            <Route path="/editjob" element={<EditJob onUpdateJob={onUpdateJob}companies={companies} getCompanies={getCompanies}categories={categories} getCategories={getCategories}/>}></Route>
             <Route path="/userjobs" element= {<UserJobs jobs={jobs} getJobs={getJobs} />}></Route>
         </Routes>
 
