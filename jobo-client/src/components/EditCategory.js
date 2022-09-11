@@ -14,7 +14,8 @@ function EditCategory({onUpdateCategory}) {
         setCategoryDesc(localStorage.getItem('CATEGORY_DESC'))
         
     }, []);
-    function handleUpdate(){
+    function handleUpdate(event){
+      event.preventDefault()
           fetch(`https://jobo-server2.herokuapp.com/categories/${id}`, {
           method: 'PATCH',
           headers:{

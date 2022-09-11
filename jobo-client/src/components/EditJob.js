@@ -41,7 +41,8 @@ function EditJob({onUpdateJob,companies,getCompanies,categories,getCategories}) 
           console.log(err.message);
          });
        }, [getCategories]);
-    function handleUpdate(){
+    function handleUpdate(event){
+      event.preventDefault()
           fetch(`https://jobo-server2.herokuapp.com/jobs/${id}`, {
           method: 'PATCH',
           headers:{

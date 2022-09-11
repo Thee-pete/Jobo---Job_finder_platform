@@ -28,11 +28,11 @@ function Category({category, handleDeleteCategory}) {
     return (
         <div className='category-item'>
             <div className='label-name'>
-            <p className='label-txt'>Category name</p>
+            <p className='label-txt'>Category name:</p>
               <p>{category.category_name}</p>
               </div>
               <div className='label-name'>
-            <p className='label-txt'>Category description</p>
+            <p className='label-txt'>Category description:</p>
               <p>{category.category_desc}</p>
               </div>
               <div className='button-cont'>

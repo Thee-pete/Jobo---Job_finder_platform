@@ -15,7 +15,8 @@ function EditCompany({onUpdateCompany}) {
         setCompanyDesc(localStorage.getItem('COMPANY_DESC'))
         
     }, []);
-    function handleUpdate(){
+    function handleUpdate(event){
+      event.preventDefault();
           fetch(`https://jobo-server2.herokuapp.com/companies/${id}`, {
           method: 'PATCH',
           headers:{
