@@ -25,7 +25,7 @@ The live link to the back-end (API) is https://jobo-server2.herokuapp.com/
 - Ruby
 
 ## Technologies
-- Netlify
+- Vercel
 - Heroku
 - Sinatra
 
