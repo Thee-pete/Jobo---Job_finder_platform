@@ -37,6 +37,8 @@ function EditCategory({onUpdateCategory}) {
         <div className='edit-container'>
              <AdminSideBar/>
             <div className='form-container'>
+            <p>Bug: If taken to a blank screen after updating.Please reload page.</p>
+              <br></br>
             <h1 className='create-header'>Update category</h1>  
             <form onSubmit={handleUpdate} >
               <label>

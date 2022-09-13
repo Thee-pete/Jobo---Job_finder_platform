@@ -66,6 +66,8 @@ function EditJob({onUpdateJob,companies,getCompanies,categories,getCategories}) 
         <div className='edit-container'>
              <AdminSideBar/>
             <div className='form-container'>
+              <p>Bug: If taken to a blank screen after updating.Please reload page.</p>
+              <br></br>
             <h1 className='create-header'>Update job</h1>  
             <form onSubmit={handleUpdate}>
                 <div>
