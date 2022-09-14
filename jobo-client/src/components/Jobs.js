@@ -9,6 +9,7 @@ function Jobs({jobs, getJobs, handleDeleteJob}){
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         fetch(`https://jobo-server2.herokuapp.com/jobs`)
          .then((response) => response.json())
          .then((actualData) => {

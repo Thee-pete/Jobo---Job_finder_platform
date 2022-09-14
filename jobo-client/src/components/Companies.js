@@ -12,6 +12,7 @@ function Companies({companies, getCompanies,handleDeleteCompany}) {
     }
 
     useEffect(() => {
+        setIsLoading(true);
         fetch(`https://jobo-server2.herokuapp.com/companies`)
          .then((response) => response.json())
          .then((actualData) => {

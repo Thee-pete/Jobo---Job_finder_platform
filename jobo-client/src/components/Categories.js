@@ -7,6 +7,7 @@ import Loading from './Loading';
 function Categories({categories, getCategories, handleDeleteCategory}) {
     const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
+        setIsLoading(true);
         fetch(`https://jobo-server2.herokuapp.com/categories`)
          .then((response) => response.json())
          .then((actualData) => {
