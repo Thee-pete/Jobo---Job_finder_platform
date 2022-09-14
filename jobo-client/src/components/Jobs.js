@@ -1,20 +1,27 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
 import AdminSideBar from './AdminSideBar';
 import { useNavigate } from 'react-router';
-
+import Loading from './Loading';
 import Job from './Job';
 
 function Jobs({jobs, getJobs, handleDeleteJob}){
+   
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         fetch(`https://jobo-server2.herokuapp.com/jobs`)
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)
-            getJobs(actualData)})
+            getJobs(actualData)
+            setIsLoading(false)
+        
+        })
+            
          .catch((err) => {
           console.log(err.message);
          });
+        
        }, [getJobs]);
 
     const renderJobs = jobs.map((job)=>{
@@ -31,7 +38,7 @@ function Jobs({jobs, getJobs, handleDeleteJob}){
             <AdminSideBar/>
             <div>
            <div>
-            {renderJobs}
+           {isLoading ? <Loading/> : renderJobs }
            </div>
             <button className='add-new-btn' onClick={handleAddJob}>Add new job</button>
             </div>

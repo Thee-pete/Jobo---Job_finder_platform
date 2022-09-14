@@ -1,6 +1,5 @@
 import NavBar from "./NavBar";
 import Home from "./Home";
-import Footer from "./Footer";
 import { Route, Routes } from "react-router-dom";
 import UserComponent from "./UserComponent"
 import Admin from "./Admin";

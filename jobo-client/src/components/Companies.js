@@ -1,9 +1,11 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
 import AdminSideBar from './AdminSideBar';
 import { useNavigate } from 'react-router';
 import Company from './Company';
+import Loading from './Loading';
 
 function Companies({companies, getCompanies,handleDeleteCompany}) {
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     function handleAddCompany(){
         navigate("/addcompany")
@@ -14,7 +16,9 @@ function Companies({companies, getCompanies,handleDeleteCompany}) {
          .then((response) => response.json())
          .then((actualData) => {
             console.log(actualData)
-            getCompanies(actualData)})
+            getCompanies(actualData)
+            setIsLoading(false)
+        })
          .catch((err) => {
           console.log(err.message);
          });
@@ -32,7 +36,7 @@ function Companies({companies, getCompanies,handleDeleteCompany}) {
             <AdminSideBar/>
             <div>
             <div>
-            {renderCompanies}    
+            {isLoading ? <Loading/> : renderCompanies } 
             </div>
             <button className='add-new-btn' onClick={handleAddCompany}>Add new company</button>
             </div>
